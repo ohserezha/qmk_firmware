@@ -34,31 +34,31 @@ enum keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [DEF] = LAYOUT_split_3x6_3(
-        KC_ESC,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,    KC_Y,    KC_U,   KC_I,       KC_O,       KC_P,       KC_LBRC, 
-        KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,   KC_G,    KC_H,    KC_J,   KC_K,       KC_L,       KC_SCLN,    KC_QUOT, 
-        KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,    KC_N,    KC_M,   KC_COMM,    KC_DOT,     KC_SLSH,    KC_RBRC,
-                                _______, LA_NAV, KC_LSFT, KC_SPC,  LA_SYM, _______
+        KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,   KC_T,    KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,     KC_LBRC, 
+        KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,   KC_G,    KC_H,     KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT, 
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,   KC_B,    KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH,  KC_RBRC,
+                                   _______, LA_NAV, KC_LSFT, KC_SPC,   LA_SYM,  _______
     ),
 
     [SYM] = LAYOUT_split_3x6_3(
         _______, KC_ESC,  KC_LBRC, KC_LCBR, KC_LPRN, KC_TILD, KC_CIRC, KC_RPRN, KC_RCBR, KC_RBRC, KC_GRV,   _______,
-        _______, KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  KC_HASH, OS_SHFT, OS_CMD,  OS_ALT,  OS_CTRL,  _______,
+        _______, KC_MINS, KC_ASTR, KC_EQL,  KC_UNDS, KC_DLR,  KC_HASH, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,  _______,
         _______, KC_PLUS, KC_PIPE, KC_AT,   KC_SLSH, KC_PERC, XXXXXXX, KC_BSLS, KC_AMPR, KC_QUES, KC_EXLM,  _______,
-                                   _______, _______, _______, _______, _______, _______
+                                   _______, _______, _______, KC_ENT,  _______, _______
     ),
 
     [NAV] = LAYOUT_split_3x6_3(
         _______, KC_TAB,  SW_WIN,  TAB_L,   TAB_R,   KC_VOLU, _______, HOME,    KC_UP,   END,     KC_DEL,   _______,
-        _______, OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, KC_VOLD, KC_CAPS, KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC,  _______,
+        _______, OS_SHFT, OS_CTRL, OS_ALT,  OS_CMD,  KC_VOLD, KC_CAPS, KC_LEFT, KC_DOWN, KC_RGHT, KC_BSPC,  _______,
         _______, SPACE_L, SPACE_R, BACK,    FWD,     KC_MPLY, XXXXXXX, KC_PGDN, KC_PGUP, SW_LANG, KC_ENT,   _______,
-                                   _______, _______, _______, _______, _______, _______
+                                   _______, _______, _______, KC_ENT,  _______, _______
     ),
 
     [NUM] = LAYOUT_split_3x6_3(
-        _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,      KC_6,       KC_7,    KC_8,    KC_9,    KC_0,    _______,
-        _______, OS_CTRL, OS_ALT,  OS_CMD,  OS_SHFT, _______,   _______,    OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT, _______,
-        _______, _______, _______, _______, _______, _______,   _______,   _______,  _______,   _______,   _______, _______,
-                                   _______, _______, _______, _______, _______, _______
+        _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     _______,
+        _______, OS_SHFT, OS_CTRL, OS_ALT,  OS_CMD,  XXXXXXX, XXXXXXX, OS_CMD,  OS_ALT,  OS_CTRL, OS_SHFT,  _______,
+        _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  _______,
+                                   _______, _______, _______, KC_ENT, _______, _______
     ),
 };
 
@@ -78,7 +78,7 @@ bool is_oneshot_ignored_key(uint16_t keycode) {
     case LA_NAV:
     case KC_LSFT:
     case OS_SHFT:
-    case OS_CTRL:0  
+    case OS_CTRL:
     case OS_ALT:
     case OS_CMD:
         return true;
