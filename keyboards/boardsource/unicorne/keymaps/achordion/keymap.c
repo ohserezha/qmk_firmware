@@ -94,6 +94,7 @@ bool achordion_eager_mod(uint8_t mod) {
     case MOD_LCTL:
     case MOD_RCTL:
     case MOD_LGUI:
+    case MOD_RGUI:
       return true;
 
     default:
